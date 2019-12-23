@@ -1,1 +1,1 @@
-{"Alarmas": [{"Nombre": "Alarma 1", "Hora": 9, "Minuto": 51, "Dias": [0, 2, 4, 6], "Last": "2019-12-23 09:49:35.613402"}, {"Nombre": "Alarma 2", "Hora": 10, "Minuto": 0, "Dias": [1, 3, 5], "Last": "2019-12-23 09:49:35.613402"}]}
+{"Alarmas": [{"Nombre": "Alarma 1", "Hora": 17, "Minuto": 30, "Dias": [0, 2, 4, 6], "Last": "2019-12-23"}, {"Nombre": "Alarma 2", "Hora": 15, "Minuto": 3, "Dias": [1, 3, 5], "Last": "2019-12-22"}, {"Nombre": "Alarma 3", "Hora": 17, "Minuto": 17, "Dias": [0, 3, 5], "Last": "2019-12-23"}]}

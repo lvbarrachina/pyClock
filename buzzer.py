@@ -29,6 +29,15 @@ class Buzzer():
 
     def render(self):
         self.bStop.render()
+        t2=(datetime.datetime.today()-self.iniciado).seconds
+        if t2 % 2 == 1:
+            pygame.draw.rect(self.App._display_surf, (255, 0, 0), (30, 30, 200, 100), 2)
+        else:
+            pygame.draw.rect(self.App._display_surf, (255, 255, 255), (30,30,200,100), 2)
+
+        if t2 > 60*2:
+            self.stop()
+            pass
 
     def doProc(self):
         pass

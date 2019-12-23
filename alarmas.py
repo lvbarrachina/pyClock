@@ -22,6 +22,7 @@ class Alarmas:
 
     def setAlarma(self, n):
         print(self.App.config["Alarmas"][n]["Nombre"])
+        self.App.go_setAlarm(n)
 
     def on_init(self, app):
         self.App = app

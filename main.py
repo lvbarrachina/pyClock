@@ -5,6 +5,7 @@ from reloj import Reloj
 from config import ConfigMenu
 from alarmas import Alarmas
 from buzzer import Buzzer
+from setalarm import SetAlarm
 
 from pygame.locals import *
 # from datetime import date, datetime
@@ -108,6 +109,10 @@ class App:
     def go_alarmas(self):
         self.actual = Alarmas()
         self.actual.on_init(self)
+
+    def go_setAlarm(self,n):
+        self.actual = SetAlarm()
+        self.actual.on_init(self,n)
 
     def on_execute(self):
         if self.on_init() == False:
