@@ -1,0 +1,1 @@
+{"Alarmas": [{"Nombre": "Alarma 1", "Hora": "7:00", "Dias": "1,2,3,4,5"}, {"Nombre": "Alarma 2", "Hora": "9:00", "Dias": "6,7"}, {"Nombre": "Alarma 1", "Hora": "7:00", "Dias": "1,2,3,4,5"}, {"Nombre": "Alarma 2", "Hora": "9:00", "Dias": "6,7"}, {"Nombre": "Alarma 1", "Hora": "7:00", "Dias": "1,2,3,4,5"}, {"Nombre": "Alarma 2", "Hora": "9:00", "Dias": "6,7"}]}
