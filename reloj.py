@@ -86,5 +86,3 @@ class Reloj:
 
         for b in self.botones:
             b.render()
-
-        pygame.display.flip()

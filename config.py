@@ -96,4 +96,3 @@ class ConfigMenu:
 
         self.App._display_surf.set_clip(None)
 
-        pygame.display.flip()
