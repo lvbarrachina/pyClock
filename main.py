@@ -5,7 +5,8 @@ from reloj import Reloj
 from config import ConfigMenu
 from alarmas import Alarmas
 from pygame.locals import *
-from datetime import date, datetime
+#from datetime import date, datetime
+import datetime
 import json
 
 class App:
@@ -17,6 +18,14 @@ class App:
         self.texto = None
         self.config = {}
 
+    def test_alarm(self):
+        t1=datetime.datetime.today()
+        for a in self.config['Alarmas']:
+            #print(a['Dias'])
+            if t1.weekday() in a['Dias']:
+                if t1.hour==a["Hora"] and t1.minute==a["Minuto"]:
+                    print("Es el momento de "+a["Nombre"])
+
     def on_init(self):
         pygame.init()
         pygame.font.init()
@@ -26,10 +35,18 @@ class App:
             with open('config.txt') as json_file:
                 self.config = json.load(json_file)
         else:
-            self.config['Alarmas'] = [{"Nombre": "Alarma 1", "Hora": "7:00", "Dias": "1,2,3,4,5"},
-                                      {"Nombre": "Alarma 2", "Hora": "9:00", "Dias": "6,7"}]
+            self.config['Alarmas'] = [{"Nombre": "Alarma 1", "Hora": 9, "Minuto":51, "Dias": [0,2,4,6], "Last":str(datetime.datetime.today())},
+                                      {"Nombre": "Alarma 2", "Hora": 10, "Minuto":0, "Dias": [1,3,5], "Last":str(datetime.datetime.today())}]
 
-        self.texto = pygame.font.SysFont("DroidSansMono", 48)
+        t1=datetime.datetime.today()
+        for a in self.config['Alarmas']:
+            #print(a['Dias'])
+            if t1.weekday() in a['Dias']:
+                if t1.hour==a["Hora"] and t1.minute==a["Minuto"]:
+                    print("Es el momento de "+a["Nombre"])
+
+
+        self.texto = pygame.font.Font("DroidSansMono.ttf", 48)
         #self._display_surf = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.FULLSCREEN)
         self._display_surf = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF)
         self._running = True
@@ -46,6 +63,7 @@ class App:
 
     def on_loop(self):
         self.actual.doProc()
+        self.test_alarm()
         pass
 
     def on_render(self):
@@ -74,7 +92,7 @@ class App:
         if self.on_init() == False:
             self._running = False
 
-        while (self._running):
+        while self._running:
             for event in pygame.event.get():
                 self.on_event(event)
             self.on_loop()

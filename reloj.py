@@ -33,7 +33,7 @@ class Reloj:
     def on_init(self, app):
         self.App = app
 
-        self.texto = pygame.font.SysFont("DroidSansMono", 72)
+        self.texto = pygame.font.Font("DroidSansMono.ttf", 72)
 
         formatos = [".bmp", ".png", "jpeg", ".jpg"]
         for r, d, f in os.walk("data"):
